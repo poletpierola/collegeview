@@ -4,13 +4,12 @@ module.exports = {
         .url('http://www.collegeview.com/')
         .waitForElementVisible('body', 1000)
         .click('a[href="/collegesearch/index.jsp"]')
-        .waitForElementVisible('body',3000)
-        .click('select[id="critHeader0"]')
-        .waitForElementVisible('ui-picklist-options',2000)
-        .click('select[class="ui-picklist-option-text"] option[value="Ohio"]')
-        .pause(1000)
-        .assert.containsText('ol#rso li:first-child',
-          'Rembrandt - Wikipedia')
+        .waitForElementVisible('body',1000)
+        .click('#critHeader0')
+        .click('option[value=Ohio]')
+        .click('#critHeader1')
+        .click('input[type=radio]', 'degreeTypeRadio0')
+        .setValue('input[type=text]', 'Computer Software Engineering')
         .end();
     }
   };
